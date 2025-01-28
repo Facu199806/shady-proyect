@@ -1,0 +1,21 @@
+@use '../bases/generales' as vars;
+
+@media (max-width: 768px) {
+    .nav-item {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .footer {
+        p {
+            font-size: 0.8rem;
+        }
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+

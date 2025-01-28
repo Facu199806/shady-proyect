@@ -1,0 +1,115 @@
+@use './bases/_generales' as generales; // Variables generales (colores, fuentes, etc.)
+@use './bases/_operaciones' as operaciones; // Mixins (box-shadow, transition, etc.)
+@use './bases/_queries'; // Media queries
+@use './components/_header'; // Estilos del header
+@use './components/_main'; // Estilos del main
+@use './components/_footer'; // Estilos del footer
+
+/* Estilos globales */
+body {
+    background-color: generales.$color-fondo;
+    color: generales.$color-texto;
+    font-family: generales.$font-principal;
+    margin: 20px; // Espaciado global
+    padding: 0;
+    line-height: 1.6;
+    max-width: 1400px;
+}
+
+header {
+    @include operaciones.box-shadow(0, 4px, 10px, rgba(0, 0, 0, 0.3));
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, generales.$color-header-gradient, generales.$color-destacado);
+    border-bottom: 2px solid generales.$color-destacado;
+    margin-bottom: 20px; // Espaciado para separar del siguiente elemento
+
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        color: generales.$color-encabezado;
+        text-shadow: 2px 2px 4px #000;
+    }
+
+    p {
+        font-size: 1.2em;
+    }
+}
+
+nav {
+    text-align: center;
+    background-color: generales.$color-nav-bg;
+    padding: 20px;
+    margin: 20px auto; // Espaciado adicional
+    border-radius: 10px;
+    border: 1px solid generales.$color-destacado;
+    @include operaciones.box-shadow(0, 4px, 10px, rgba(0, 0, 0, 0.3));
+    @include operaciones.transition(transform 0.3s ease);
+
+    &:hover {
+        transform: scale(1.02);
+    }
+
+    h2 {
+        font-size: 1.8em;
+        margin-bottom: 10px;
+        color: generales.$color-encabezado;
+        text-shadow: 1px 1px 3px #000;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        li {
+            a {
+                text-decoration: none;
+                color: generales.$color-texto;
+                font-weight: bold;
+                font-size: 1.2em;
+                padding: 12px 24px; // Botones más grandes y consistentes
+                border: 2px solid generales.$color-destacado;
+                border-radius: 5px;
+                @include operaciones.box-shadow(0, 3px, 5px, rgba(0, 0, 0, 0.4));
+                @include operaciones.transition(background-color 0.3s, color 0.3s, transform 0.2s ease-in-out);
+                display: inline-block;
+
+                &:hover {
+                    background-color: generales.$color-boton;
+                    color: generales.$color-boton-texto;
+                    transform: translateY(-3px);
+                }
+
+                &:focus {
+                    outline: 2px dashed generales.$color-texto;
+                    outline-offset: 4px;
+                }
+            }
+
+            p {
+                margin-top: 5px;
+                font-size: 0.95em;
+                color: generales.$color-texto-claro;
+            }
+        }
+    }
+}
+
+/* Responsividad adicional */
+@include queries.small {
+    body {
+        margin: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li a {
+        font-size: 1em;
+        padding: 10px 16px; // Ajustar tamaño en pantallas pequeñas
+    }
+}

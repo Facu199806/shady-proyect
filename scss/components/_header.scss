@@ -1,0 +1,68 @@
+@use '../bases/generales' as vars;
+
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: vars.$color-fondo;
+  color: vars.$color-texto;
+  border-bottom: 2px solid vars.$color-destacado;
+
+  h1 {
+    font-size: 2em;
+    color: vars.$color-destacado;
+  }
+
+  nav {
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+
+      li {
+        margin: 0 10px;
+
+        a {
+          color: vars.$color-texto;
+          text-decoration: none;
+
+          &:hover {
+            color: vars.$color-destacado;
+          }
+        }
+      }
+    }
+  }
+}
+.navbar {
+  background-color: $color-fondo;
+  border-bottom: 2px solid $color-destacado;
+
+  .nav-link {
+      color: $color-texto-claro;
+      transition: color 0.3s ease;
+
+      &:hover {
+          color: lighten($color-destacado, 15%);
+      }
+  }
+}
+.navbar-toggler {
+  border: none;
+  background-color: transparent;
+  outline: none;
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  .navbar-toggler-icon {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.collapse {
+  &.show {
+    display: block !important;
+  }
+}

@@ -1,0 +1,8 @@
+// Importar variables y mixins
+@use 'bases/generales' as vars;
+@use 'bases/operaciones';
+@use 'bases/queries';
+
+// Importar componentes
+@use 'components/header';
+@use 'components/footer';

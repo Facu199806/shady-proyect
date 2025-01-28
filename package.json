@@ -1,0 +1,24 @@
+{
+  "name": "proyect-2.0",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch scss:css",
+    "build": "sass scss/style.scss css/style.css --style compressed",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Facu199806/comision-74945.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Facu199806/comision-74945/issues"
+  },
+  "homepage": "https://shady-coderina.netlify.app/",
+  "description": "",
+  "devDependencies": {
+    "sass": "^1.83.4"
+  }
+}

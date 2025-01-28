@@ -1,0 +1,35 @@
+@use '../bases/generales' as vars; // Ajusta la ruta según tu estructura
+
+.footer {
+    border-top: 2px solid vars.$color-destacado; // Uso del alias "vars"
+    padding: 20px 0;
+    text-align: center;
+    background-color: vars.$color-fondo;
+    color: vars.$color-texto-claro;
+
+    // Sombra en el footer
+    @include vars.box-shadow(0, -4px, 6px, rgba(0, 0, 0, 0.3));
+
+    p {
+        margin: 0;
+        font-size: 1rem;
+
+        a {
+            color: vars.$color-destacado;
+            text-decoration: none;
+
+            &:hover {
+                color: lighten(vars.$color-destacado, 15%);
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        p {
+            font-size: 0.8rem;
+        }
+    }
+}
